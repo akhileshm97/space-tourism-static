@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./assets/favicon-32x32.png"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="./styles/modern-css-reset.min.css"
+		/>
+		<link rel="stylesheet" type="text/css" href="./styles/base.css" />
+		<link rel="stylesheet" type="text/css" href="./styles/utilities.css" />
+		<link rel="stylesheet" type="text/css" href="./styles/common.css" />
+		<link rel="stylesheet" type="text/css" href="./styles/home.css" />
+		<script type="text/javascript" src="./index.js" defer></script>
+
+		<title>Frontend Mentor | Space tourism website</title>
+	</head>
+
+	<body class="home">
+		<header id="primary-header">
+			<div class="logo">
+				<a href="/">
+					<img src="./assets/shared/logo.svg" alt="logo" />
+				</a>
+			</div>
+
+			<button
+				type="button"
+				aria-controls="primary-navigation"
+				id="menu-toggle"
+				data-open="false"
+			>
+				<span class="sr-only" aria-expanded="false">Menu</span>
+				<img
+					src="./assets/shared/icon-hamburger.svg"
+					aria-hidden="true"
+					class="hamburger-icon"
+				/>
+				<img
+					src="./assets/shared/icon-close.svg"
+					aria-hidden="true"
+					class="close-icon"
+				/>
+			</button>
+
+			<nav id="primary-navigation" aria-expanded="false">
+				<ul role="list">
+					<li>
+						<a href="/" class="nav-item active">
+							<span aria-hidden="true">00</span>Home
+						</a>
+					</li>
+					<li>
+						<a href="./destination.html" class="nav-item">
+							<span aria-hidden="true">01</span>Destination
+						</a>
+					</li>
+					<li>
+						<a href="./crew.html" class="nav-item">
+							<span aria-hidden="true">02</span>Crew
+						</a>
+					</li>
+					<li>
+						<a href="./technology.html" class="nav-item">
+							<span aria-hidden="true">03</span>Technology
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<main>
+			<header class="flow">
+				<h1>So, you want to travel to <span>Space</span></h1>
+				<p>
+					Let’s face it; if you want to go to space, you might as well genuinely
+					go to outer space and not hover kind of on the edge of it. Well sit
+					back, and relax because we’ll give you a truly out of this world
+					experience!
+				</p>
+			</header>
+			<a href="/destination.html" class="explore">
+				<span>Explore</span>
+			</a>
+		</main>
+	</body>
+</html>

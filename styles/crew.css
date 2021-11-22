@@ -1,0 +1,85 @@
+.crew {
+	background-image: url('../assets/crew/background-crew-mobile.jpg');
+	background-size: cover;
+	background-position: bottom;
+}
+
+.crew main {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		'header'
+		'picture'
+		'tablist'
+		'article';
+	place-items: center;
+	gap: 1rem;
+	text-align: center;
+}
+.crew main h1 {
+	grid-area: header;
+}
+.crew main [role='tablist'] {
+	grid-area: tablist;
+}
+.crew main article {
+	grid-area: article;
+}
+main article:not([data-selected='true']) {
+	display: none;
+}
+main picture:not([data-selected='true']) {
+	display: none;
+}
+.crew main article header h2 {
+	color: hsl(var(--clr-light), 0.6);
+	font-size: 1.5rem;
+}
+.crew main article header p {
+	color: white;
+	font-size: 2rem;
+}
+.crew main article p {
+	color: hsl(var(--clr-light));
+	text-align: center;
+}
+.crew main picture {
+	position: relative;
+	grid-area: picture;
+	max-width: 50%;
+}
+.crew main picture::after {
+	content: '';
+	position: absolute;
+	top: 100%;
+	width: calc(200% - 8vw);
+	left: 50%;
+	transform: translateX(-50%);
+	border-bottom: 1px solid hsl(var(--clr-light), 0.2);
+}
+
+@media screen and (min-width: 720px) {
+	.crew {
+		background-image: url('../assets/crew/background-crew-desktop.jpg');
+	}
+	.crew main {
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+			'header picture'
+			'article picture'
+			'tablist picture';
+		justify-items: start;
+		text-align: start;
+	}
+	.crew main picture {
+		justify-self: center;
+		align-self: end;
+		max-width: 60%;
+	}
+	.crew main picture::after {
+		display: none;
+	}
+	.crew main article p {
+		text-align: start;
+	}
+}

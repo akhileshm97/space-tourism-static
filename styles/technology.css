@@ -1,0 +1,79 @@
+.technology {
+	background-image: url('../assets/technology/background-technology-mobile.jpg');
+	background-size: cover;
+	background-position: bottom;
+}
+.technology main {
+	display: grid;
+	grid-template-areas:
+		'header'
+		'picture'
+		'tablist'
+		'article';
+	place-items: center;
+	gap: 2rem;
+	color: hsl(var(--clr-light));
+	padding-inline: 0;
+	text-align: center;
+}
+
+.technology main h1 {
+	grid-area: header;
+	color: white;
+}
+.technology main [role='tablist'] {
+	grid-area: tablist;
+}
+.technology main picture {
+	position: relative;
+	grid-area: picture;
+	animation: load-article 0.7s;
+}
+.technology main article {
+	grid-area: article;
+	padding-inline: 4vw;
+	animation: load-article 0.7s;
+	padding-bottom: 1rem;
+}
+
+.technology main article:not([data-selected='true']) {
+	display: none;
+}
+.technology main picture:not([data-selected='true']) {
+	display: none;
+}
+
+.technology main article header {
+	color: white;
+	text-transform: uppercase;
+}
+.technology main article header span {
+	color: hsl(var(--clr-light));
+}
+
+@media screen and (min-width: 720px) {
+	.technology {
+		background-image: url('../assets/technology/background-technology-desktop.jpg');
+	}
+	.technology main {
+		grid-template-columns: 1fr 1fr 4fr 4fr;
+		grid-template-areas:
+			'. header header header'
+			'. tablist article picture';
+		justify-items: start;
+		align-items: center;
+		row-gap: 0;
+		column-gap: 1rem;
+		text-align: start;
+	}
+	.technology main [role='tablist'] {
+		flex-direction: column;
+	}
+	.technology main picture {
+		justify-self: end;
+		max-width: 90%;
+	}
+	.technology main article {
+		padding-inline: 0;
+	}
+}

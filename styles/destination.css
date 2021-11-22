@@ -1,0 +1,113 @@
+.destination {
+	background-image: url('../assets/destination/background-destination-mobile.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+main {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		'header'
+		'tablist'
+		'article';
+	/*place-content: center;*/
+	place-items: center;
+	gap: 1rem;
+}
+main h1 {
+	grid-area: header;
+	margin: 1rem 0 2rem;
+}
+main article {
+	--flow-space: 2rem;
+	grid-area: article;
+	display: grid;
+	grid-template-columns: 1fr;
+	place-items: center;
+	gap: 2rem;
+	text-align: center;
+	width: 100%;
+	animation: load-article 0.7s;
+}
+main article:not([data-selected='true']) {
+	display: none;
+}
+main [role='tablist'] {
+	position: sticky;
+	top: 0;
+	grid-area: tablist;
+}
+
+picture {
+	display: inline-block;
+	margin: 0 auto;
+}
+
+h2 {
+	color: white;
+	font-size: 3rem;
+	text-align: center;
+}
+
+p {
+	line-height: 1.8;
+	color: hsl(var(--clr-light));
+	margin-inline: auto;
+}
+
+hr {
+	color: hsl(var(--clr-light), 0.2);
+	margin: auto;
+	height: 1px;
+}
+
+dl {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	text-transform: uppercase;
+}
+
+dl dt {
+	color: hsl(var(--clr-light));
+}
+
+dl dd {
+	color: white;
+	font-size: 2rem;
+}
+
+@media screen and (min-width: 720px) {
+	.destination {
+		background-image: url('../assets/destination/background-destination-desktop.jpg');
+	}
+
+	main {
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+			'header header'
+			'. tablist'
+			'article article';
+		place-items: start;
+		/*text-align: start;*/
+	}
+
+	main article {
+		grid-template-columns: 1fr 1fr;
+		place-items: start;
+		text-align: start;
+	}
+
+	h2 {
+		text-align: start;
+	}
+
+	p {
+		margin-inline: revert;
+	}
+
+	dl {
+		flex-direction: row;
+	}
+}

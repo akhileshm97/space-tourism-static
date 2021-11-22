@@ -1,0 +1,90 @@
+.home {
+	background-image: url('../assets/home/background-home-mobile.jpg');
+	background-size: cover;
+	background-position: bottom;
+}
+.home main {
+	display: grid;
+	place-items: center;
+	gap: 1rem;
+}
+.home main header {
+	color: hsl(var(--clr-light));
+	text-align: center;
+}
+.home main h1 {
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 1rem;
+}
+.home main h1 span {
+	display: block;
+	color: hsl(0, 0%, 90%);
+	font-size: 4.5em;
+}
+
+.explore {
+	display: inline-block;
+	position: relative;
+	align-self: start;
+	color: black;
+	background-color: white;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 0.25em;
+	aspect-ratio: 1;
+	padding: 0.5em 1em;
+	border-radius: 50%;
+}
+.explore::before {
+	content: 'Explore';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: transparent;
+}
+.explore::after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	inset: 0;
+	opacity: 0;
+	background-color: hsl(0, 0%, 100%, 0.5);
+	border-radius: 50%;
+	transition: transform 0.4s ease-in-out, opacity 0.5s ease-in-out;
+}
+.explore:hover::after,
+.explore:focus-visible::after {
+	transform: scale(1.5);
+	opacity: 1;
+}
+
+.explore span {
+	clip-path: inset(50%);
+	/*display: inline-block;*/
+}
+
+@media screen and (min-width: 720px) {
+	.home {
+		background-image: url('../assets/home/background-home-desktop.jpg');
+	}
+	.home main {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.home main header {
+		text-align: start;
+	}
+	.home h1 {
+		font-size: 2rem;
+	}
+	.home main h1 span {
+		display: block;
+		font-size: 6em;
+	}
+
+	.explore {
+		padding: 1em 2em;
+		align-self: center;
+	}
+}
