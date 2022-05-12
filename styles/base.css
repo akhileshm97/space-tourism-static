@@ -12,7 +12,7 @@
 
 body {
 	/*font-family: Courier New, sans-serif;*/
-	font-family: sans-serif;
+	font-family: 'introrustg-base2line', sans-serif;
 	overflow-x: hidden;
 }
 
@@ -50,4 +50,12 @@ ul[role='tablist'] {
 :focus-visible {
 	outline: 2px solid white;
 	outline-offset: 2px;
+}
+
+@font-face {
+  font-family: 'introrustg-base2line';
+  src: url('introrustg-base2line-webfont.woff2') format('woff2'),
+       url('introrustg-base2line-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
